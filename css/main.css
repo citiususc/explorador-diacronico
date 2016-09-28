@@ -1,0 +1,104 @@
+body{min-width: 300px}
+a:hover{text-decoration: underline}
+
+::-moz-selection,
+::selection {color: #FFFFFF;background: #f47431}
+
+.full-height{height: 100%}
+.no-margin-bottom{margin-bottom: 0}
+.texto-inicio{ font-size: 1.9em; text-align: justify; padding-top:30px; color:#444; margin-bottom:30px}
+.seccion > header .titulo {padding-left:60px; font-weight: 300}
+.seccion  .sub-titulo {font-weight: 300; font-size:3em; margin:60px auto 20px}
+.oculto{display:none}
+.no-padding-bottom{padding-bottom:0}
+.container.texto{text-align: justify; margin-bottom: 20px}
+#idioma, #btn-idioma{margin: 25px 0 0 60px}
+.help{vertical-align:middle; color: #828282; margin-left:10px}
+
+.input-line.col.s12.m6.l4{min-width:246px}
+
+#slide-out{z-index: 100000}
+#slide-out ul li a{color:#FFF}
+
+#nav-opener{top: 0; right:20px}
+#nav-opener .btn-floating.btn-large i{line-height: 56.5px }
+
+#main-container {padding:0 0 0 240px}
+
+#chart-container{display:none;min-width: 310px; height: 600px; margin: 30px auto; text-align: center}
+
+#pie-container{width:100%; padding-left: 240px}
+/*#pie-container #copyright{margin-top:80px}*/
+#pie-container .logo figure{max-width: 200px; padding:0;margin:0}
+#pie-container .logo figure img{width:100%;padding:0;margin:0}
+
+/*
+    FORM
+*/
+/* label color */
+.input-field label {color: #000;}
+/* label focus color */
+.input-field input[type=email]:focus + label,
+.input-field input[type=text]:focus + label {color: #000;}
+/* label underline focus color */
+.input-field input[type=email]:focus,
+.input-field input[type=text]:focus { border-bottom: 1px solid #000; box-shadow: 0 1px 0 0 #000; }
+/* valid color */
+.input-field input[type=email].valid,
+.input-field input[type=text].valid {border-bottom: 1px solid #000; box-shadow: 0 1px 0 0 #000;}
+/* invalid color */
+.input-field input[type=email].invalid,
+.input-field input[type=text].invalid { border-bottom: 1px solid #000;box-shadow: 0 1px 0 0 #000;}
+/* icon prefix focus color */
+.input-field .prefix.active {color: #000;}
+/*Radio*/
+[type="radio"].with-gap:checked+label:before{border-color:#ff9100}
+[type="radio"].with-gap:checked+label:after{border-color:#ff9100;background-color: #ff9100;}
+#mensaje{resize: vertical; min-height: 150px}
+#msj-label{margin-left: 5px}
+#msj-label.active{margin: 0; padding-bottom: 5px}
+/* Toast*/
+#toast-container { top: auto; right: 20px; bottom: 20px;  }
+
+#conf.collapsible{box-shadow: none; border-top:none;border-right:none; border-left:none}
+#conf.collapsible .collapsible-body{border-bottom:0}
+#conf.collapsible .noUi-base {height: 5px;}
+#conf.collapsible .noUi-connect{background: #ff9100; height:5px}
+#conf.collapsible .noUi-background{height:5px; background: #DFDFDF}
+#conf.collapsible .noUi-target{box-shadow: none; border: none}
+#conf.collapsible .noUi-horizontal .noUi-handle{width:20px; height:20px; line-height:20px;border-radius: 20px; background: #f47431 ; border:none; box-shadow: none; cursor: ew-resize}
+#conf.collapsible .noUi-horizontal .noUi-handle:before,
+#conf.collapsible .noUi-horizontal .noUi-handle:after{content:""; border:none; color: transparent; background: transparent}
+#conf.collapsible .noUi-tooltip{border:none;background:transparent;left:-6px;color: #ff9100;}
+
+#conf .line .titulo-linea{padding-left: 10px; margin-bottom:5px}
+#conf .line p.input-line{padding: 5px 0 5px 30px}
+#conf .line p#tipo{margin-top:30px}
+
+#loader-chart-containter{position:relative}
+#loader-chart-containter .preloader-wrapper{position: absolute; left:48%}
+img.nube-palabras{border: 6px solid #ff9100; padding: 15px; background: #FFF; max-width: 75% ; max-height: 50%}
+
+form input[type=text].validate+label { width: calc(100% - 3rem) !important;  }
+
+.container.lista{margin-bottom:20px}
+.container.lista li.seleccionado{background:#F7D8B1; border-radius:3px; padding:3px}
+.container.lista li::before{content:""; width:6px;height: 6px; background-color: #ff9100; float:left; border-radius:10px; line-height: 100%; margin-top:7px}
+.container.lista li{padding-left:15px; margin-bottom: 5px}
+.container.lista li .espacio{padding-right: 5px}
+.container.lista li .name{font-weight: bold; color:#ff9100}
+.container.lista li .mark{text-decoration: underline; font-style: italic}
+
+@media only screen and (max-width : 992px) {
+    #pie-container,
+    #main-container { padding-left: 0;}
+}
+
+@media only screen and (max-width : 600px) {
+    .seccion > header .titulo {padding-left:1rem; margin-top:10px; font-weight: 300; max-width: calc(100% - 60px)}
+    #main-container{padding-top:0}
+    #idioma, #btn-idioma{margin: 25px 0 0 1rem}
+}
+
+#conf.collapsible .collapsible-header:hover #gear,
+#gear:hover{transition: .4s linear; -webkit-transform: rotate(120deg);}
