@@ -104,7 +104,7 @@ require_once("header.php")
                 var tipo = $("input[name='tipo']:checked").val();
                 var error = false
 
-                if (tipo != "simple" && tipo != "hermanas" && tipo != "pares" && tipo != "historico" && tipo != "nube") {
+                if (tipo != "simple" && tipo != "transitiva" && tipo != "pares" && tipo != "historico" && tipo != "nube") {
                     error = true;
                     Materialize.toast(context.errorTipo, 3000, 'red')
                 }
@@ -186,7 +186,7 @@ require_once("header.php")
                                             $('#chart-container').css("height", "600px");
                                             var highchartsData = jQuery.extend(true, {}, highchartsDataBase);
 
-                                            if (tipo == "simple" || tipo == "hermanas") {
+                                            if (tipo == "simple" || tipo == "transitiva") {
                                                 highchartsData["series"][0]["data"] = data;
                                                 highchartsData["title"]["text"] = context.corrMedia + palabra;
                                             } else if (tipo == "pares") {
@@ -328,10 +328,10 @@ require_once("header.php")
                                         <a title="{{ayuda}}" href="info.php#pares"><i class="help material-icons">live_help</i></a>
                                     </p>
                                     <p class="input-line  col s12 m6 l4">
-                                        <input class="with-gap" name="tipo" type="radio" id="tipo-3" value="hermanas"/>
+                                        <input class="with-gap" name="tipo" type="radio" id="tipo-3" value="transitiva"/>
                                         <label for="tipo-3">{{radio3}}</label>
 
-                                        <a title="{{ayuda}}" href="info.php#hermanas"><i class="help material-icons">live_help</i></a>
+                                        <a title="{{ayuda}}" href="info.php#transitiva"><i class="help material-icons">live_help</i></a>
                                     </p>
                                     <p class="input-line  col s12 m6 l4">
                                         <input class="with-gap" name="tipo" type="radio" id="tipo-4" value="historico"/>

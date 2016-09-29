@@ -100,6 +100,11 @@ class Busca:
 
     @cherrypy.tools.accept(media='text/plain')
     def GET(self, tipo=None, word=None, start=None, end=None):
+        
+        with open(self.d + "log", 'a') as outfile:
+            outfile.write(str(cherrypy.request.remote.ip) + " ["+ time.strftime("%d/%m/%Y %H:%M:%S") + "]" + " - "+ tipo + " - " + word +" - " +start+ " - " + end + '\n')
+            outfile.close()
+        
         db = self.client.mydb
         year_start = 1899
         year_end = 2010
@@ -133,14 +138,14 @@ class Busca:
 #en funcion del tipo de busqueda se decide:
 
             #Si el tipo es transitiva y ya existe un archivo creado con los resultados, se devuelve dicho archivo
-            if tipo == "hermanas" and os.path.exists(self.d + "cache/" + nombreFichero):
+            if tipo == "transitiva" and os.path.exists(self.d + "cache/" + nombreFichero):
                 ruta = self.d + "cache/" + nombreFichero;
                 with open(ruta) as json_data:
                     entries = json.load(json_data)
                 entries = json.dumps(entries)
 
             #Si el tipo es transitiva, pero no existe un archivo de resultados, se anade la tarea al archivo.
-            elif tipo == "hermanas" and not os.path.exists(self.d + "cache/" + nombreFichero):
+            elif tipo == "transitiva" and not os.path.exists(self.d + "cache/" + nombreFichero):
                 cursor = db.correlations.find(query)
 
 
@@ -211,7 +216,7 @@ class Busca:
 
                     else:
                         try:
-                            entries = entries[word2]
+                            entries = entries[word2.decode("utf-8")] 
                             listaFormateada = []
 
                             for e in entries["data"]:

@@ -9,7 +9,7 @@ El explorador diacrónico se puede usar de dos formas. Accediendo a la web o atr
 Web
 --------
 
-Se puede acceder al explorador pinchando en el siguiente `enlace <http://tec.citius.usc.es/buscador-diacronico/>`_. Este portal brinda una forma de acceder a los datos proporcionados por la propia API. Para ello se apoya en la conocida biblioteca ` Highcharts <http://www.highcharts.com/>`_ para la representación de datos.
+Se puede acceder al explorador pinchando en el siguiente `enlace <http://tec.citius.usc.es/buscador-diacronico>`_. Este portal brinda una forma de acceder a los datos proporcionados por la propia API. Para ello se apoya en la conocida biblioteca ` Highcharts <http://www.highcharts.com/>`_ para la representación de datos.
 
 Por defecto, las búsquedas que se realizan son las denominadas búsquedas simples, en el período comprendido de 2005 a 2009. Tanto el tipo de búsqueda como el período de tiempo pueden ser cambiados si pulsamos en el icono de búsqueda avanzada.
 
@@ -53,7 +53,7 @@ Actualmente, el explorador da soporte a cuatro tipos diferentes de búsqueda:
 **nube**
     Este tipo de búsqueda servirá para generar una imagen formada a partir de las palabras con mayor grado de similiaridad. Se recibe como resultado la ruta de ésta.
 
-**hermanas**
+**transitiva**
     Esta búsqueda se basa en la propiedad transitiva. Para clarificar esto imaginemos una estructura de árbol, en el primer nivel estaría la *raíz*, es decir la palabra buscada, mientras que en el segundo nivel estarían las 20 palabras con un nivel de similaridad más alto. Por otro lado tendríamos un tercer nivel, formado por las palabras que son similares a las del segundo nivel. Usando la propiedad transitiva, la palabra del primer nivel tendría un grado de similariad con las palabras del 3 nivel, calculado mediante la suma de los grados de similariad y aplicando una normalización de los resultados; obteniendo así valores entre 0 y 100 para la similaridad transitiva.
 
 Soporte

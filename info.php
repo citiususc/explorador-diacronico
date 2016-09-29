@@ -27,8 +27,8 @@ require_once("header.php")
                     {"name":"Nube",
                         "id":"nube",
                         "text":"Este tipo de búsqueda servirá para generar una imagen formada a partir de las palabras con mayor grado de similiaridad. Se recibe como resultado la ruta de ésta."},
-                    {"name":"Hermanas",
-                        "id":"hermanas",
+                    {"name":"Transitiva",
+                        "id":"transitiva",
                         "text":"Esta búsqueda se basa en la propiedad transitiva. Para clarificar esto imaginemos una estructura de árbol, en el primer nivel estaría la <span class='mark'>raíz</span>, es decir la palabra buscada, mientras que en el segundo nivel estarían las 20 palabras con un nivel de similaridad más alto. Por otro lado tendríamos un tercer nivel, formado por las palabras que son similares a las del segundo nivel. Usando la propiedad transitiva, la palabra del primer nivel tendría un grado de similariad con las palabras del 3 nivel, calculado mediante la suma de los grados de similariad y aplicando una normalización de los resultados; obteniendo así valores entre 0 y 100 para la similaridad transitiva."}
                 ]
             };
@@ -52,8 +52,8 @@ require_once("header.php")
                     {"name":"Nube",
                         "id":"nube",
                         "text":"Este tipo de búsqueda servirá para generar una imagen formada a partir de las palabras con mayor grado de similiaridad. Se recibe como resultado la ruta de ésta."},
-                    {"name":"Hermanas",
-                        "id":"hermanas",
+                    {"name":"Transitiva",
+                        "id":"transitiva",
                         "text":"Esta búsqueda se basa en la propiedad transitiva. Para clarificar esto imaginemos una estructura de árbol, en el primer nivel estaría la <span class='mark'>raíz</span>, es decir la palabra buscada, mientras que en el segundo nivel estarían las 20 palabras con un nivel de similaridad más alto. Por otro lado tendríamos un tercer nivel, formado por las palabras que son similares a las del segundo nivel. Usando la propiedad transitiva, la palabra del primer nivel tendría un grado de similariad con las palabras del 3 nivel, calculado mediante la suma de los grados de similariad y aplicando una normalización de los resultados; obteniendo así valores entre 0 y 100 para la similaridad transitiva."}
                 ]
 
@@ -78,8 +78,8 @@ require_once("header.php")
                     {"name":"Nube",
                         "id":"nube",
                         "text":"Este tipo de búsqueda servirá para generar una imagen formada a partir de las palabras con mayor grado de similiaridad. Se recibe como resultado la ruta de ésta."},
-                    {"name":"Hermanas",
-                        "id":"hermanas",
+                    {"name":"Transitiva",
+                        "id":"transitiva",
                         "text":"Esta búsqueda se basa en la propiedad transitiva. Para clarificar esto imaginemos una estructura de árbol, en el primer nivel estaría la <span class='mark'>raíz</span>, es decir la palabra buscada, mientras que en el segundo nivel estarían las 20 palabras con un nivel de similaridad más alto. Por otro lado tendríamos un tercer nivel, formado por las palabras que son similares a las del segundo nivel. Usando la propiedad transitiva, la palabra del primer nivel tendría un grado de similariad con las palabras del 3 nivel, calculado mediante la suma de los grados de similariad y aplicando una normalización de los resultados; obteniendo así valores entre 0 y 100 para la similaridad transitiva."}
                 ]
             };
