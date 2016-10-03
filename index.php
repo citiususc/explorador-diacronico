@@ -9,6 +9,7 @@ require_once("header.php")
             var theTemplate = Handlebars.compile(theTemplateScript);
 
             var context_es = {
+                "seleccionTipo":"Seleccione el tipo de búsqueda",
                 "titulo": "Explorador diacrónico",
                 "texto": 'Bienvenido al explorador diacrónico. Puedes encontrar más información sobre la utilidad de la herramienta',
                 "link": {href: "info.php", title: "Más información", texto: "aquí"},
@@ -37,14 +38,15 @@ require_once("header.php")
             };
 
             var context_gl = {
+                "seleccionTipo":"Escolla o tipo de busca",
                 "titulo": "Explorador diacrónico",
                 "texto": 'Benvido ao explorador diacrónico. Podes atopar máis información sobre a utilidade da ferramenta',
                 "link": {href: "info.php", title: "Máis información", texto: "aquí"},
                 "keywordLabel": "Palabra a buscar",
-                "enviarLabel": "Búsqueda",
+                "enviarLabel": "Busca",
                 "radio1": "Simple",
                 "radio2": "Pares",
-                "radio3": "Similaridad transitiva",
+                "radio3": "Similaridade transitiva",
                 "radio4": "Histórico",
                 "radio5": "Nube",
                 "titulo2": "Escolla a segunda palabra",
@@ -60,11 +62,12 @@ require_once("header.php")
                 "corrMejor": "As palabras con mellor índice de similaridad entre ",
                 "noResults": "Non hai resultados. Proba con outra palabra.",
                 "errorTimeout": "A súa consulta estase a procesar...",
-                "config": "Búsqueda avanzada"  ,
+                "config": "Busca avanzada"  ,
                 "longProcess": "Este é un proceso custo e polo tanto levará varios minutos. Por favor, espere."
             };
 
             var context_en = {
+                "seleccionTipo":"Choose the search type",
                 "titulo": "Diachronic explorer",
                 "texto": 'Welcome to de diachronic explorer. You can find further information about the tool',
                 "link": {href: "info.php", title: "More info", texto: "here"},
@@ -313,7 +316,7 @@ require_once("header.php")
                             </div>
                             <div class="collapsible-body container">
                                 <div class="line row">
-                                    <p id="tipo" class="titulo-linea col s12"> Seleccione el tipo de búsqueda:</p>
+                                    <p id="tipo" class="titulo-linea col s12"> {{seleccionTipo}}:</p>
                                     <p class="input-line col s12 m6 l4">
                                         <input class="with-gap" name="tipo" type="radio" id="tipo-1" checked="checked"
                                                value="simple"/>

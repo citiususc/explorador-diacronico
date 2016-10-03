@@ -12,24 +12,24 @@ require_once("header.php")
                 "titulo": "Información",
                 "textos": ["Trátase dun sistema que permite buscar e visualizar os cambios léxicos de decenas de millares de palabras do castelán ao longo do tempo, concretamente no eixo temporal 1900-2009, usando como fonte de datos as representacións semánticas construídas cos n-gramas de Google en castelán (45 mil millóns). O usuario busca por unha palabra e un período de tempo (entre 1 e N anos) e o sistema devolve o sentido da palabra en cada ano do intervalo buscado. O sentido dunha palabra represéntase mediante o conxunto de palabras mais similares en termos semánticos e distribucionais. Por exemplo, a palabra “cáncer” relaciónase estreitamente en 1910 con “tuberculosis” e “sífilis” peroxa en 1960 os termos máis próximos son “tumor” e “carcinoma”.","A entrada do sistema é unha estrutura de datos en que as palabras son asociadas mediante graos de similaridade (Coseno) con outras palabras e por ano. Estes datos foron xerados recentemente polo equipo PronLNat@GE (Pablo Gamallo, Marcos Garcia) mediante técnicas e módulos de Procesamento da Linguaxe Natural. Concretamente, efectuamos o procesamento semántico de 45 mil millóns de n-gramas, disponíbeis tras o escaneo de máis de 1 millón de libros do proxecto “Google Books”. O procesamento semántico consistiu en transformar os n-gramas en matrices distribucionais 'palabra-contexto'. Xerouse unha matriz por ano, onde cada palabra é un vector de contextos. Finalmente, calculouse a similaridade entre vectores (palabras) e seleccionáronse, para cada palabra, as 20 máis similares por ano. En total, xerouse unha estrutura de datos de máis de 300M, que é o input do demostrador."],
                 "subtitulo1":"Qué é",
-                "subtitulo":"Tipos de búsqueda",
-                "texto2": "Actualmente, o explorador da soporte a catro tipos diferentes de búsqueda:",
+                "subtitulo":"Tipos de busca",
+                "texto2": "Actualmente, o explorador da soporte a catro tipos diferentes de busca:",
                 "tipos" : [
                     {"name":"Simple",
                         "id":"simple",
-                        "text":"O usuario introduce unha palabra de búsqueda e especifica un período de tempo. O sistema devolve as 20 palabras cunha similaridade media máis alta no período de anos especificado."},
+                        "text":"O usuario introduce unha palabra de busca e especifica un período de tempo. O sistema devolve as 20 palabras cunha similaridade media máis alta no período de anos especificado."},
                     {"name":"Pares",
                         "id":"pares",
-                        "text":"Se facemos unha búsqueda para encontrar a similariade entre pares de palabras, o sistema ofrece un novo campo para introducir una segunda palabra. Devolve o valor de similaridade entre as dúas palabras comparadas durante o intervalo de tempo escollido."},
+                        "text":"Se facemos unha busca para encontrar a similariade entre pares de palabras, o sistema ofrece un novo campo para introducir una segunda palabra. Devolve o valor de similaridade entre as dúas palabras comparadas durante o intervalo de tempo escollido."},
                     {"name":"Histórico",
                         "id":"historico",
-                        "text":"Ao igual que na búsqueda simple, o usuario introduce unha palabra e un período de tempo. Sen embargo, o sistema especifica os valores de similaridade ano a ano en lugar de dar a media de todo o período. Por outro lado, visualizanse todas as palabras relacionadas coa palabra de búsqueda durante o período buscado en lugar das 20 primeras. Por defecto, visualízase o histórico de similaridade das tres con valores de similaridade media máis alta."},
+                        "text":"Ao igual que na busca simple, o usuario introduce unha palabra e un período de tempo. Sen embargo, o sistema especifica os valores de similaridade ano a ano en lugar de dar a media de todo o período. Por outro lado, visualizanse todas as palabras relacionadas coa palabra de busca durante o período buscado en lugar das 20 primeras. Por defecto, visualízase o histórico de similaridade das tres con valores de similaridade media máis alta."},
                     {"name":"Nube",
                         "id":"nube",
-                        "text":"Este tipo de búsqueda xera unha imaxen formada a partir das palabras con maior grao de similiaridade. A maior tamaño, maior similaridade."},
+                        "text":"Este tipo de busca xera unha imaxen formada a partir das palabras con maior grao de similiaridade. A maior tamaño, maior similaridade."},
                     {"name":"Transitiva",
                         "id":"transitiva",
-                        "text":"Esta búsqueda baséase na propiedade transitiva. Para clarificar isto imaxinemos unha estructura de árbore. No primero nivel encuentrase a raíz, é dicir aa palabra buscada, mentras que no segundo nivel están as 20 palabras cun nivel de similaridade máis alto. Tense tamén en conta un terceiro nivel, formado polas palabras que son similares ás do segundo nivel. Usando a propiedade transitiva, as palabras do primero nivel terán un grao de similariad coas palabras do 3 nivel calculado mediante a suma dos valores de similariade e aplicando unha normalización dos resultados, obtendo así valores entre 0 e 100."}
+                        "text":"Esta busca baséase na propiedade transitiva. Para clarificar isto imaxinemos unha estructura de árbore. No primero nivel encuentrase a raíz, é dicir aa palabra buscada, mentras que no segundo nivel están as 20 palabras cun nivel de similaridade máis alto. Tense tamén en conta un terceiro nivel, formado polas palabras que son similares ás do segundo nivel. Usando a propiedade transitiva, as palabras do primero nivel terán un grao de similariad coas palabras do 3 nivel calculado mediante a suma dos valores de similariade e aplicando unha normalización dos resultados, obtendo así valores entre 0 e 100."}
                 ]
 
             };
@@ -63,7 +63,7 @@ require_once("header.php")
             var context_en = {
                 "titulo": "Information",
                 "textos": ["This system allows searching and visualizing lexical changes on dozens of thousands of Spanish words along the time, specifically on the 1900-2009 range of years, using as data source semantic representations built from Google n-grams for Spanish (45 billion). The user searches a word in a range of time (between 1 and N years) and the system returns the word sense for each year from the interval searched. The word's sense is represented by the set of words that are the most similar in semantic and distributional terms. For example, the word “cancer“ was closely related in 1910 with “tuberculosis“ and “syphilis“ but in 1960 the closest terms are “tumor“ and “carcinoma“. ", "The system's input is a data structure which has words related to other words using distributional similarity score (Cosine) for each year. Distributional data were generated using Natural Language Processing techniques and modules generated by the team PronLNat@GE (Pablo Gamallo, Marcos Garcia).  More precisely, we performed the semantic process for more than 45 billion n-grams, which were scanned from more than 1 million books belonging to the “Google Books“ project. The semantic process consists in transforming the n-grams into distributional 'word-context' matrices. A matrix was generated for each year, where each word is a context array. Finally, the similarity between arrays (words) was calculated and, for each word, the 20 most similar ones were selected by year. Total, a data structure with more than 300 million words were generated and used as the input of our Diachronic Explorer. "],
-                "subtitulo1":"What it is",
+                "subtitulo1":"What is it",
                 "subtitulo":"Types of search",
                 "texto2": "At present, the explorer offers four different ways of making a diachronic search:",
                 "tipos" : [
