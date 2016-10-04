@@ -1,0 +1,7 @@
+CherryPy==7.1.0
+matplotlib==1.5.2
+numpy==1.11.1
+Pillow==3.3.1
+pymongo==3.3.0
+simplejson==3.8.1
+wordcloud==1.2.1

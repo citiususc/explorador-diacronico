@@ -6,6 +6,32 @@ La entrada del sistema es una estructura de datos en la que las palabras están 
 
 El explorador diacrónico se puede usar de dos formas. Accediendo a la web o através de su API.
 
+Instalación
+-------------
+
+Prerequisitos
+^^^^^^^^^^^^^^^^^^
+Hay que aclarar que el explorador diacrónico obtiene los datos de similaridades entre palabras de una base de datos MongoDB. Por lo tanto, es necesario que tengas un servidor de Mongo activo y accesible como fuente de datos.
+
+Además, el explorador parte de que existen las carpetas clouds y cache, así como los archivos tasks y log. La ruta a los mismos se pasa como argumento en la ejecución.
+
+Dependencias
+^^^^^^^^^^^^^^^^^^
+En segundo lugar, el explorador diacrónico se apoya en varias librerías para lograr alguna de sus funcionalidades. Para facilitar la instalación de las mismas se incluye en la raíz del proyecto un fichero requirements.txt en el formato adecuado para poder importarlas directamente con el comando pip. 
+
+    ``pip install -r requirements.txt``
+
+Despliegue
+^^^^^^^^^^^^^^^^^^
+El explorador está contruído en dos partes diferenciadas, por un lado la parte servidor, que es la encargada de consultar la fuente de datos, procesarlos y formatearlos y la interfaz web, que simplemente consulta los datos proporcionados por el servidor.
+
+Para lanzar el servidor, nos situaremos dentro de la carpeta services y ejecutaremos el fichero main.py (pasando como argumento la ruta en la que se encuentran los archivos necesarios). Esto levantará el servidor de CherryPy y se conectará contra una base de datos MongoDB con los parámetros por defecto. En este momento, tendremos el servidor levantado en http://localhost:8080/, por tanto ya podríamos hacer consultas, pasando los parámetros en la url, por ejemplo: http://localhost:8080/busca/simple/fumar/1905/1910
+
+    ``cd services``
+    ``python main.py /ruta/archivos/proyecto``
+    
+Para ejecutar la interfaz web debemos de contar con un servidor con PHP habilitado. Una vez lo tengamos, simplemente será necesario acceder a index.php para poder usar el sistema de consulta.
+
 Web
 --------
 
@@ -16,11 +42,11 @@ Por defecto, las búsquedas que se realizan son las denominadas búsquedas simpl
 API
 ------------
 
-La API está disponible mediante peticiones HTTP y no necesita ningún tipo de identificación, por lo tanto se puede acceder desde el mismo navegador. Las peticiones son de la forma *http://tec.citius.usc.es/buscador-diacronico/busca/tipo/palabra/añoInicio/añoFin*.
+La API está disponible mediante peticiones HTTP y no necesita ningún tipo de identificación, por lo tanto se puede acceder desde el mismo navegador. Las peticiones son de la forma ``http://tec.citius.usc.es/buscador-diacronico/busca/tipo/palabra/añoInicio/añoFin``.
 
 Expliquemos que significa cada parte de la petición:
 
-**http://tec.citius.usc.es/buscador-diacronico/busca/**
+**``http://tec.citius.usc.es/buscador-diacronico/busca/``**
     Es la base de la ruta, y en ningún caso cambiará.
 
 **tipo**
@@ -64,4 +90,4 @@ Si encuentra algún problema, póngase en contacto con nosotros enviando un emai
 Licencia
 -------
 
-El proyecto se encuentra bajo licencia `GNU <http://www.gnu.org/licenses/licenses.es.html>`_.
+El proyecto se encuentra bajo licencia `GNUv3 <https://www.gnu.org/licenses/gpl.html>`_.

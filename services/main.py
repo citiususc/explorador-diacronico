@@ -12,7 +12,7 @@ import urllib
 from cherrypy.process.plugins import Monitor
 
 # seleccion de la ruta raiz
-d = "/usr/share/nginx/html/"
+d = sys.argv[1]
 
 def removeFilesByFolderSize(path, limit):
     if size(path) > limit:
@@ -95,7 +95,7 @@ class Busca:
     client = MongoClient()
 
     # seleccion de la ruta raiz
-    d = "/usr/share/nginx/html/"
+    d = sys.argv[1]
 
 
     @cherrypy.tools.accept(media='text/plain')
