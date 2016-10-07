@@ -146,8 +146,8 @@ require_once("header.php")
 
                     try {
                         $.ajax({
-                            //url: 'https://tec.citius.usc.es/buscador-diacronico/busca/' + tipo + '/' + palabra + '/' + ano + '/' + ano2,
-                            url: 'http://localhost:8080/busca/' + tipo + '/' + palabra + '/' + ano + '/' + ano2,
+                            url: 'https://tec.citius.usc.es/buscador-diacronico/busca/' + tipo + '/' + palabra + '/' + ano + '/' + ano2,
+                            //url: 'http://localhost:8080/busca/' + tipo + '/' + palabra + '/' + ano + '/' + ano2,
                             dataType: "json",
                             timeout: 30000,
                             error: function (x, t, m) {
@@ -232,6 +232,9 @@ require_once("header.php")
                     } catch (e) {
                         console.log(e);
                     }
+                }else{
+                    $('#chart-container').css("height", "auto");
+                    redimensionar();
                 }
 
             }

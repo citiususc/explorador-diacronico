@@ -62,7 +62,7 @@ function isInt(n) {
 }
 
 function isWord(palabra) {
-    var stringReg = /^[a-zA-ZÁÉÍÓÚáéíóúñÑ]+( [a-zA-ZÁÉÍÓÚáéíóúñÑ]+)*$/
+    var stringReg = /^[a-zA-ZÁÉÍÓÚáéíóúñÑüÜ]+( [a-zA-ZÁÉÍÓÚáéíóúñÑüÜ]+)*$/
     var res = true;
 
     if ((typeof palabra == "undefined" || palabra == "") || !stringReg.test(palabra)) {
