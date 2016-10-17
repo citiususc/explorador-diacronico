@@ -1,4 +1,4 @@
-#Explorador diacrónico
+# Explorador diacrónico
 
 Se trata de un sistema que permite buscar y visualizar los cambios léxicos de decenas de miles de palabras del castellano a lo largo del tiempo, concretamente en el eje temporal 1900-2009, utilizando como fuente de datos las representaciones semánticas construidas con los n-gramas de Google en español (45 mil millones). El usuario busca por una palabra y un período de tiempo (entre 1 y N años) y el sistema devuelve el sentido de la palabra en cada año del rango buscado. El sentido de una palabra se representa por el conjunto de palabras más similares en términos semánticos y distribucionales. Por ejemplo, la palabra “cáncer“ está estrechamente vinculada en 1910 con “tuberculosis“ y “sífilis“ pero ya en 1960 los términos más próximos son “tumor“ y “carcinoma“.
 
@@ -6,20 +6,20 @@ La entrada del sistema es una estructura de datos en la que las palabras están 
 
 El explorador diacrónico se puede usar de dos formas. Accediendo a la web o através de su API.
 
-##Instalación
+## Instalación
 
-###Prerequisitos
+### Prerequisitos
 Hay que aclarar que el explorador diacrónico obtiene los datos de similaridades entre palabras de una base de datos MongoDB. Por lo tanto, es necesario que tengas un servidor de Mongo activo y accesible como fuente de datos.
 
 Además, el explorador parte de que existen las carpetas clouds y cache, así como los archivos tasks y log. La ruta a los mismos se pasa como argumento en la ejecución.
 
-###Dependencias
+### Dependencias
 
 En segundo lugar, el explorador diacrónico se apoya en varias librerías para lograr alguna de sus funcionalidades. Para facilitar la instalación de las mismas se incluye en la raíz del proyecto un fichero requirements.txt en el formato adecuado para poder importarlas directamente con el comando pip. 
 
     pip install -r requirements.txt
 
-###Despliegue
+### Despliegue
 
 El explorador está contruído en dos partes diferenciadas, por un lado la parte servidor, que es la encargada de consultar la fuente de datos, procesarlos y formatearlos y la interfaz web, que simplemente consulta los datos proporcionados por el servidor.
 
@@ -30,15 +30,15 @@ Para lanzar el servidor, nos situaremos dentro de la carpeta services y ejecutar
     
 Para ejecutar la interfaz web debemos de contar con un servidor con PHP habilitado. Una vez lo tengamos, simplemente será necesario acceder a index.php para poder usar el sistema de consulta.
 
-##Web
+## Web
 
-Se puede acceder al explorador pinchando en el siguiente [enlace] (http://tec.citius.usc.es/buscador-diacronico). Este portal brinda una forma de acceder a los datos proporcionados por la propia API. Para ello se apoya en la conocida biblioteca [Highcharts] (http://www.highcharts.com/) para la representación de datos.
+Se puede acceder al explorador pinchando en el siguiente [enlace](http://tec.citius.usc.es/buscador-diacronico). Este portal brinda una forma de acceder a los datos proporcionados por la propia API. Para ello se apoya en la conocida biblioteca [Highcharts](http://www.highcharts.com/) para la representación de datos.
 
 Por defecto, las búsquedas que se realizan son las denominadas búsquedas simples, en el período comprendido de 2005 a 2009. Tanto el tipo de búsqueda como el período de tiempo pueden ser cambiados si pulsamos en el icono de búsqueda avanzada.
 
-##API
+## API
 
 La API está disponible mediante peticiones HTTP y no necesita ningún tipo de identificación, por lo tanto se puede acceder desde el mismo navegador. Las peticiones son de la forma ``http://tec.citius.usc.es/buscador-diacronico/busca/tipo/palabra/añoInicio/añoFin``.
 
 
-Puede ver más información en la [versión online] (http://tec.citius.usc.es/explorador-diacronico/info.php) o en la [documentación] (http://explorador-diacronico.readthedocs.io/es/latest/).
+Puede ver más información en la [versión online](http://tec.citius.usc.es/explorador-diacronico/info.php) o en la [documentación](http://explorador-diacronico.readthedocs.io/es/latest/).
